@@ -5,7 +5,7 @@ const User = require('./app/models/user');
 
 const port = process.env.port || 8080;
 
-app.locals.db = mongoose.connect('mongodb+srv://prova:pronti@cluster0.bj5sk.mongodb.net/Cluster0?retryWrites=true&w=majority'/*process.env.DB_URL*/)
+app.locals.db = mongoose.connect(process.env.DB_URL)
     .then(() => {
         console.log("Connected Database");
         app.listen(port, () => {
