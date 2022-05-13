@@ -8,7 +8,7 @@ const { exists } = require('./models/user');
 // route to authenticate and get a new token
 // ---------------------------------------------------------
 router.post('', async function(req, res) {
-	
+
 	// find the user
 	let user = await User.findOne({
 		email: req.body.email

@@ -4,7 +4,7 @@
     <body style="background-color: lightblue;">
         <h1 align="center" id="titolo" style="color: #644847;">MyKiko</h1>
 
-        <form align="center" action="api/v1/students" method="post" name="loginform" id="loginform">
+        <form align="center" method="post" name="loginform" id="loginform">
             <img src="images/MyKiko.png" height="180" width="180">
             <h4>Inserire credenziali</h4>
             <span id="loggedUser"></span>
@@ -13,7 +13,7 @@
             <input type="password" name="email" placeholder="Password" id="loginPassword"/>
             <br><br>
             <button type="button" onclick="login()">Login</button>
-            <button type="button">Iscriviti</button>
+            <button type="button" onclick="signUp()">Iscriviti</button>
         </form>
 
         <script src="script.js"></script>
