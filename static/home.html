@@ -1,10 +1,44 @@
 <!DOCTYPE html>
 
 <html>
-    <body>
-        <h1>Homescreen</h1>
 
-        <h2 id="sottoTitolo">sottoTitolo</h2>
+    <head>
+        <link href="stile.css" rel="stylesheet" type="text/css">
+    </head>
+
+    <body style="background-color: lightblue;">
+        <h1>Home</h1>
+
+        <div id="hormenu"><!-- div che contiene il menu -->
+            <ul> <!-- lista principale: definisce il menu nella sua interezza -->
+            <li>
+            <a href="#" >Selezione animale</a> <!-- primo list-item, prima voce del menu -->
+            <ul> <!-- Lista annidata: voci del sotto-menu -->
+            <li><a href="#">Submenu 1</a></li>
+            <li><a href="#">Submenu 1</a></li>
+            <li><a href="#">Submenu 1</a></li>
+            <li><a href="#">Submenu 1</a></li>
+            <li><a href="#">Submenu 1</a></li>
+            </ul> <!-- Fine del sotto-menu -->
+            </li> <!-- Chiudo il list-item -->
+            <!--qui altri list-item -->
+        </div>     
+
+        <br>
+
+        <form id="datiAnimle">
+            <p id="dati">Dati animale</p>
+            <img src="images/cane.jpg" height="100" width="150">
+        </form>
+
+        <form>
+            <button>Info animale</button>
+            <button>Impegni</button>
+            <button>Cibo</button>
+            <button>SmarThings</button>
+        </form>
+
+        <br>
 
         <form action="index.html">
             <button id="logout">Logout</button>
@@ -14,5 +48,5 @@
 
     </body>
 
-    <!--<script src="script.js"></script> -->
+    <script src="script.js"></script>
 </html>

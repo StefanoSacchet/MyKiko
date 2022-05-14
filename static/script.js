@@ -1,7 +1,15 @@
 var loggedUser = {};
 
+//Per disabilitare e riabilitare i bottoni
+let buttonLogin = document.querySelector(".button");
+let buttonIscriviti = document.querySelector(".input");
+
 //This function is called when login button is pressed
 function login() {
+
+    //Disable buttons
+    buttonLogin.disabled = true;
+    buttonIscriviti.disabled = true;
 
     var email = document.getElementById("loginEmail").value;
     var password = document.getElementById("loginPassword").value;
@@ -33,16 +41,25 @@ function login() {
             element.appendChild(para);
         }else{
             document.location.href='home.html';
+            document.getElementById("dati").innerHTML = loggedUser.email;
         }
 
         // loggedUser.id = loggedUser.self.substring(loggedUser.self.lastIndexOf('/') + 1);
         //document.getElementById("loggedUser").innerHTML = loggedUser.email;
         return;
     })
+    .then(function(){ //Enable buttons
+        buttonLogin.disabled = false;
+        buttonIscriviti.disabled = false;
+    })
     .catch( error => console.error(error) ); // If there is any error you will catch them here
 }
 
 function signUp(){
+
+    //Disable buttons
+    buttonLogin.disabled = true;
+    buttonIscriviti.disabled = true;
 
     var email = document.getElementById("loginEmail").value;
     var password = document.getElementById("loginPassword").value;
@@ -67,6 +84,10 @@ function signUp(){
         }
 
         return;
+    })
+    .then(function(){ //Enable buttons
+        buttonLogin.disabled = false;
+        buttonIscriviti.disabled = false;
     })
     .catch( error => console.error(error) ); // If there is any error you will catch them here
 }

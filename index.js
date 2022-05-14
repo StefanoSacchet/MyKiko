@@ -12,8 +12,20 @@ app.locals.db = mongoose.connect(process.env.DB_URL)
             console.log("Server listening on port " + port);
         })
     });
-    
 /*new User({
-    email: 'ciao',
-    password: '123'
+    email: 'bella',
+    password: '456',
+    animale: [{
+        nome: 'bubi',
+        razza: 'cane',
+        eta: 14,
+        peso: 13,
+        codiceChip: 'fff'
+    }, {
+        nome: 'bobo',
+        razza: 'pappagallo',
+        eta: 2,
+        peso: 0.8,
+        codiceChip: 'ppp'
+    }]
 }).save();*/
