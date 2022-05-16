@@ -9,27 +9,13 @@
     <body style="background-color: lightblue;">
         <h1>Home</h1>
 
-        <div id="hormenu"><!-- div che contiene il menu -->
-            <ul> <!-- lista principale: definisce il menu nella sua interezza -->
-            <li>
-            <a href="#" >Selezione animale</a> <!-- primo list-item, prima voce del menu -->
-            <ul> <!-- Lista annidata: voci del sotto-menu -->
-            <li><a href="#">Submenu 1</a></li>
-            <li><a href="#">Submenu 1</a></li>
-            <li><a href="#">Submenu 1</a></li>
-            <li><a href="#">Submenu 1</a></li>
-            <li><a href="#">Submenu 1</a></li>
-            </ul> <!-- Fine del sotto-menu -->
-            </li> <!-- Chiudo il list-item -->
-            <!--qui altri list-item -->
-        </div>     
+        <button onclick="infoAnimale()">Info animale</button>
+        <br>
+        <p id="infoAnimale">infoAnimale</p>
 
         <br>
 
-        <form id="datiAnimle">
-            <p id="dati">Dati animale</p>
-            <img src="images/cane.jpg" height="100" width="150">
-        </form>
+        <img src="images/cane.jpg" height="100" width="150">  
 
         <form>
             <button>Info animale</button>
@@ -46,7 +32,7 @@
         
         <!-- <a href="index.html">Vai al login</a> -->
 
-    </body>
+        <script src="home.js"></script>
 
-    <script src="script.js"></script>
+    </body>
 </html>

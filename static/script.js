@@ -32,6 +32,7 @@ function login() {
         loggedUser.email = data.email;
         loggedUser.id = data.id;
         loggedUser.self = data.self;
+        loggedUser.animale = data.animale;
 
         if(!data.success){
             var para = document.createElement("p");
@@ -40,8 +41,12 @@ function login() {
             var element = document.getElementById("loginform");
             element.appendChild(para);
         }else{
+            sessionStorage.setItem("email",email);
+            sessionStorage.setItem("password",password);
+            //sessionStorage.setItem("animale",JSON.stringify(data.animale));
+            //console.log(data.animale[0]);
+
             document.location.href='home.html';
-            document.getElementById("dati").innerHTML = loggedUser.email;
         }
 
         // loggedUser.id = loggedUser.self.substring(loggedUser.self.lastIndexOf('/') + 1);
