@@ -1,0 +1,51 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: "ModificaCredenziali"
+  description: ModificaCredenziali è una semplice API che permette all'utente di modificare la sua mail e/o password.
+  license:
+    name: MIT
+    url: https://github.com/apiaryio/polls-api/blob/master/LICENSE
+host: polls.apiblueprint.org
+basePath: /
+schemes:
+- https
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+  /questions:
+    x-summary: Credenziali modificate
+    put:
+      summary: Modifica credenziali 
+      responses:
+        200:
+          description: Changes applyed
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/schemas'
+          examples:
+            application/json:
+              - emailNew: nuovaemail@gmail.com
+                password: nuovapassword123
+        404: 
+          description: Error
+                
+definitions:
+  schemas:
+    title: Dati
+    type: object
+    properties:
+      emailOld:
+        type: string
+        description: Email vecchia
+      emailNew:
+        type: string
+        description: Email nuova
+      password:
+        type: string
+        description: Password nuova
+          
+    
