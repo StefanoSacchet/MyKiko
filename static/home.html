@@ -9,49 +9,24 @@
     <body style="background-color: lightblue;">
         <h1 style="color: #644847;">Home</h1>
 
-        <div class="btn-group">
-            <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Seleziona animale
-            </button>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-        </div>
-
-        <br>
-        <button onclick="infoAnimale()">Info animale</button>
-        <br>
-        <p id="infoAnimale"></p>
-
-        <br>
-
         <img src="images/cane.jpg" height="100" width="150" id="immagine">
 
         <br><br>
 
-        <form>
-            <button id="gestisciAnimale">gestisci Info animale</button>
+        <div>
+            <button id="gestisciAnimale" onclick="infoAnimale()">Info animale</button>
             <button id="impegni">Impegni</button>
             <button id="cibo">Cibo</button>
             <button id="smarThings">SmarThings</button>
-        </form>
+        </div>
 
         <br>
 
-        <form action="/pagine/modificaCredenziali.html">
-            <button>Modifica credenziali</button>
-        </form>
-        <!-- <div id="tmp"></div> -->
+        <button onclick="modificaCredenziali()">Modifica credenziali</button>
 
         <br><br>
 
-        <form action="index.html">
-            <button id="logout">Logout</button>
-        </form>
-        
-        <!-- <a href="index.html">Vai al login</a> -->
+        <button onclick="logout()">Logout</button>
 
         <script src="home.js"></script>
 
