@@ -4,8 +4,6 @@ var loggedUser = {};
 let buttonLogin = document.getElementById("login");
 let buttonIscriviti = document.getElementById("iscriviti");
 
-let count = 0; //Print only once 'Username o password sbagliati'
-
 //This function is called when login button is pressed
 function login() {
 
@@ -22,7 +20,7 @@ function login() {
     //document.location.href='/pagine/home.html';
     //document.getElementById("sottoTitolo").innerHTML = "ciao"; //"email: " + email + " , password: " + password;
     
-    fetch('../api/v1/authentications', {
+    fetch('../api/v1/userAccount/authentication', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify( { email: email, password: password } ),
@@ -35,21 +33,13 @@ function login() {
         loggedUser.id = data.id;
         loggedUser.self = data.self;
 
-        if(!data.success){
-
-            //Print only once 'Username o password sbagliati'
-            if(count == 0){
-                var para = document.createElement("p");
-                var nodo = document.createTextNode("Username o password sbagliati");
-                para.appendChild(nodo);
-                var element = document.getElementById("loginform");
-                element.appendChild(para);
-                count++;
-            }
-        }else{
-            count = 0;
+        if(data.success){
             sessionStorage.setItem("email",email);
             document.location.href='home.html';
+        }else if(data.message == "Authentication failed. User not found."){
+            document.getElementById("paraDanger").innerHTML = "Username o password sbagliati";
+        }else{
+            document.getElementById("paraDanger").innerHTML = "Compilare tutti i campi";
         }
 
         // loggedUser.id = loggedUser.self.substring(loggedUser.self.lastIndexOf('/') + 1);
@@ -74,7 +64,7 @@ function signUp(){
 
     //console.log(email + " " + password);
 
-    fetch('../api/v1/registration', {
+    fetch('../api/v1/userAccount/registration', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify( { email: email, password: password } ),
@@ -84,11 +74,13 @@ function signUp(){
         //console.log(data); /*problema: id = undefinfed*/
 
         if(data.success){
-            var para = document.createElement("p");
-            var nodo = document.createTextNode("Credenziali registrate, effetuare il login");
-            para.appendChild(nodo);
-            var element = document.getElementById("loginform");
-            element.appendChild(para);
+            document.getElementById("paraInfo").innerHTML = "Credenziali registrate, effetuare il login";
+        }else if(data.message == "Registration failed. User already subscribed."){
+            document.getElementById("paraDanger").innerHTML = "Utente già iscritto";
+        }else if(data.message == "Registration failed. input empty"){
+            document.getElementById("paraDanger").innerHTML = "Compilare tutti i campi";
+        }else{
+            document.getElementById("paraDanger").innerHTML = "Errore, ricaricare la pagina";
         }
 
         return;

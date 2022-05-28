@@ -25,7 +25,7 @@
         <div id="cards"> <!-- float:left; display:block; -->
             
             <div class="card" style="width: 18rem;">
-                <img src="images/cane.jpg" class="card-img-top" alt="...">
+                <img src="images/info.png" class="card-img-top" style="width:250px" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">Info animale</h5>
                   <p class="card-text">Qui puoi visualizzare e modificare i dati dei tuoi animali</p>
@@ -34,7 +34,7 @@
             </div>
     
             <div class="card" style="width: 18rem;">
-                <img src="images/cane.jpg" class="card-img-top" alt="...">
+                <img src="images/calendario.png" class="card-img-top" style="width:250px" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">Impegni</h5>
                   <p class="card-text">Qui puoi visualizzare e modificare i tuoi impegni</p>
@@ -43,7 +43,7 @@
             </div>
 
             <div class="card" style="width: 18rem;">
-                <img src="images/cane.jpg" class="card-img-top" alt="...">
+                <img src="images/immaginecibo.png" class="card-img-top" style="width:250px" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">Cibo</h5>
                   <p class="card-text">Qui puoi vedere i livelli di cibo dei tuoi animali</p>
@@ -52,10 +52,10 @@
             </div>
     
             <div class="card" style="width: 18rem;">
-                <img src="images/cane.jpg" class="card-img-top" alt="...">
+                <img src="images/smart.png" class="card-img-top" style="width:250px" alt="...">
                 <div class="card-body">
-                  <h5 class="card-title">Qui puoi vedere i tuoi dispositivi smart</h5>
-                  <p class="card-text">Prova</p>
+                  <h5 class="card-title">SmarThings</h5>
+                  <p class="card-text">Qui puoi vedere i dispositivi smart collegati al tuo profilo</p>
                   <button href="#" class="btn btn-primary" onclick="smarThings()">SmarThings</button>
                 </div>
             </div>
@@ -68,7 +68,15 @@
 
         <br><br>
 
-        <button type="button"class="btn btn-danger" onclick="logout()">Logout</button>
+        <button type="button" class="btn btn-danger" onclick="logout()">Logout</button>
+        
+        <div align="right">
+          <button id="deleteAccount"  type="button" class="btn btn-danger" onclick="deleteAccount()">Cancella account</button>
+          <button id="confermaDelete"  type="button" class="btn btn-danger" onclick="confermaDelete()">Conferma</button>
+          <button id="annullaDelete"  type="button" class="btn btn-light" onclick="annullaDelete()">Annulla</button>
+          <br>
+          <p class="text-danger" id="paraDanger"></p>
+        </div>
 
         <script src="home.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

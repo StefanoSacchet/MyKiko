@@ -2,6 +2,7 @@ const app = require('./app/app.js');
 const mongoose = require('mongoose');
 
 const User = require('./app/models/user');
+const Razza = require('./app/models/razza');
 
 const port = process.env.port || 8080;
 
@@ -15,27 +16,41 @@ app.locals.db = mongoose.connect(process.env.DB_URL)
 
 /*AGGIUNGE USER AL DATABSE*/
 /*new User({
-    email: 'prova1',
-    password: '1',
+    email: 'prova2',
+    password: '2',
     animale: [{
-        nome: 'Theodore',
-        razza: 'gatto',
-        eta: 7,
-        peso: 8.1,
-        codiceChip: 'abc',
-        infoSpecie: "Il gatto domestico è un mammifero carnivoro appartenente alla famiglia dei felidi. Dall’indole essenzialmente territoriale e crepuscolare, il gatto è un" +
-        "predatore di piccoli animali, specialmente roditori. Per comunicare utilizza vari vocalizzi, le fusa, le posizioni del corpo e i feromoni. Prevalentemente domestico," +
-        "il gatto può essere addestrato ad accettare istruzioni semplici e può imparare da solo a manipolare svariati meccanismi, anche complessi, tra cui le maniglie delle porte" +
-        "o le chiusure delle gabbie."
+        nome: 'Packy',
+        razza: 'pappagallo',
+        eta: 2,
+        peso: 1.2,
+        codiceChip: 'fff',
+        immagine: '/images/pappagallo.jpg'
     }, {
-        nome: 'Ariel',
-        razza: 'gatto',
-        eta: 7,
-        peso: 6.2,
-        codiceChip: '123',
-        infoSpecie: "Il gatto domestico è un mammifero carnivoro appartenente alla famiglia dei felidi. Dall’indole essenzialmente territoriale e crepuscolare, il gatto è un" +
-        "predatore di piccoli animali, specialmente roditori. Per comunicare utilizza vari vocalizzi, le fusa, le posizioni del corpo e i feromoni. Prevalentemente domestico," +
-        "il gatto può essere addestrato ad accettare istruzioni semplici e può imparare da solo a manipolare svariati meccanismi, anche complessi, tra cui le maniglie delle porte" +
-        "o le chiusure delle gabbie."
+        nome: 'Bobo',
+        razza: 'cane',
+        eta: 4,
+        peso: 9.2,
+        codiceChip: 'aaa',
+        immagine: '/images/cane.jpg'
+    }],
+    impegni: [{
+        impegno: 'Toiletatura',
+        animale: 'Packy',
+        luogo: 'Clinica Maske',
+        data: new Date("2022-11-13T11:22:33Z")
+    }, {
+        impegno: 'Passeggiata',
+        animale: 'Bobo',
+        luogo: 'Parco melta',
+        data: new Date("2024-02-01T23:11:59Z")
     }]
 }).save();*/
+
+/*AGGIUNGE RAZZA AL DATABSE*/
+/*
+new Razza({
+    razza: 'carlino',
+    infoSpecie: "Decisamente quadrato e raccolto, è il “multum in parvo “ dimostrato nella compattezza di forme, struttura ben solida e muscolatura potente. Il Carlino è un cane che adora stare in casa e che non ama essere lasciato in solitudine. La condivisione di momenti felici con il proprietario è tutto per lui. È un cane di grande compagnia che si adatta facilmente alla vita con altri cani e instaura un rapporto amichevole anche con gli sconosciuti. Adora giocare e dispone di un discreto livello di energia e vigorosità. Ama molto giocare anche con i bambini. Può sviluppare la tendenza a ingrassare, bisogna, quindi, garantirgli una discreta quantità di esercizi quotidiani. I costi per il mantenimento rientrano nella media.",
+    immagine: '/images/carlino.jpg'
+}).save();
+*/
