@@ -88,30 +88,6 @@ paths:
                 type: string
                 items:
                   $ref: '#/components/schemas/Animale'
-  
-   /modificaCredenziali:
-    put:
-      description: >-
-        Modifies user's credentials
-      summary: Changes user's info
-      responses:
-          '200':
-            description: 'Changes applyed'
-            schema:
-              type: array
-              items:
-                $ref: '#/definitions/schemas/User'
-            examples:
-              application/json:
-                - emailNew: newemail@gmail.com
-                  password: newpassword123
-          '400':
-            description: 'Empty inputs fields'
-            headers:
-              'Message':
-                schema:
-                  type: string
-                description: Failed changes, empty inputs fields
 
    /modificaInfoAnimale:
     put:
