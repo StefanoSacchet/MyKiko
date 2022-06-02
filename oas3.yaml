@@ -248,6 +248,41 @@ paths:
         417:
           description: Eliminazione fallita (controllo svolto senza successo). 
           
+   /AggiungiImpegno:
+    post:
+      description: >-
+        Puoi aggiungere il tuo nuovo impegno inserendo le informazioni disponibili
+      summary: Crea un nuovo impegno nel database
+      parameters:
+        - name: body
+          in: body 
+          required: true
+          schema:
+            $ref: '#/definitions/schemas'
+      responses:
+        201:
+          description: 'Data Inserted'
+          schema:
+            $ref: '#/definitions/schemas' 
+          examples:
+            application/json:
+              - email: emailUtente
+                impegno: impegno_impegni
+                animale: animale_impegni
+                luogo: luogo_impegni
+                data: data_impegni
+                ora: ora_impegni
+        400:       
+          description: Empty inputs 
+          examples:
+            application/json:
+               - email: emailUtente
+                 impegno: 
+                 animale: 
+                 luogo: 
+                 data: 
+                 ora:
+          
    /deletefood:
     x-summary: Elimina cibo
     delete:
