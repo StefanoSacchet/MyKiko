@@ -197,20 +197,7 @@ paths:
         500:
           description: Delete failed. User not found.
         417:
-          description: Eliminazione fallita (controllo svolto senza successo). 
-          
-          
-   /deleteaccount:
-    x-summary: Elimina account
-    delete:
-      summary: elimina account con tutti i suoi dati
-      responses:
-        200:
-          description: account eliminato (controllo svolto con successo)
-        500:
-          description: Delete failed. User not found.
-        417:
-          description: Eliminazione fallita (controllo svolto senza successo).    
+          description: Eliminazione fallita (controllo svolto senza successo).     
           
         
    /impegni:
