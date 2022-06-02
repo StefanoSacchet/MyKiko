@@ -311,41 +311,7 @@ paths:
               - quantita: 150
         500:
           description: 'User not found' 
-
-                 
-   /ModificaImpegno:
-    x-summary: Dati modificati
-    put:
-      summary: Modifica dati impegno
-      responses:
-        200:
-          description: Changes applyed
-          schema:
-            type: array
-            items:
-              $ref: '#/definitions/schemas'
-          examples:
-            application/json:
-              - email: emailUtente
-                idImpegno: 6289378051a91e38f9872234
-                impegno: nuovo_impegno
-                animale: nuovo_animale
-                luogo: nuovo_luogo
-                data: nuova_data
-                ora: nuova_ora
-        400:
-          description: Empty imputs
-          examples:
-            application/json:
-              - email: emailUtente
-                idImpegno: 6289378051a91e38f9872234
-                impegno:
-                animale: 
-                luogo: 
-                data: 
-                ora:
-        500:
-          description: 'User not found'   
+  
           
    /InfoAlimentazioneRazza:
     x-summary: Informazioni alimentazione in base alla razza
