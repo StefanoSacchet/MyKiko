@@ -221,18 +221,7 @@ paths:
               - ora: 12:00
         500:
           description: 'User not found'
-          
-   /deleteanimal:
-    x-summary: Elimina animale
-    delete:
-      summary: elimina animale con tutti i suoi dati
-      responses:
-        200:
-          description: animale eliminato (controllo svolto con successo)
-        500:
-          description: Delete failed. User not found.
-        417:
-          description: Eliminazione fallita (controllo svolto senza successo).         
+           
    
    /deletetask:
     x-summary: Elimina impegno
