@@ -146,12 +146,12 @@ function formatData(p, impegno){
         }
     }
 
-    let tmp = hour
-    hour = parseInt(tmp) + 1;
+    // let tmp = hour
+    // hour = parseInt(tmp) + 1;
 
-    if(hour < 10){
-        hour = "0" + hour;
-    }
+    // if(hour < 10){
+    //     hour = "0" + hour;
+    // }
 
     if(hour != "01" || minutes != "00"){
         p.innerHTML = "Impegno: " + impegno.impegno + "<br>Luogo: " + impegno.luogo + " <br>Data: " + day + "/" + month + "/" + year + "<br>Ora: " + hour + ":" + minutes;
