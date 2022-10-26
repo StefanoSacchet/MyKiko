@@ -1,6 +1,14 @@
+<<<<<<< HEAD
 #margine{
     margin-left: 5px;
     margin-bottom: 5px;
     margin-right: 5px;
     margin-top: 5px;
+=======
+#margine{
+    margin-left: 10px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+>>>>>>> 9fe4da7fb181c67e76eea38f366fd71640fe79e9
 }

@@ -73,6 +73,7 @@ paths:
               schema:
                 type: string
               description: Registration failed. input empty
+<<<<<<< HEAD
 
    /infoAnimale:
     get:
@@ -89,6 +90,9 @@ paths:
                 items:
                   $ref: '#/components/schemas/Animale'
   
+=======
+    
+>>>>>>> 9fe4da7fb181c67e76eea38f366fd71640fe79e9
    /modificaCredenziali:
     put:
       description: >-
@@ -112,6 +116,34 @@ paths:
                 schema:
                   type: string
                 description: Failed changes, empty inputs fields
+                
+   /deleteaccount:
+    x-summary: Elimina account
+    delete:
+      summary: elimina account con tutti i suoi dati
+      responses:
+        200:
+          description: account eliminato (controllo svolto con successo)
+        500:
+          description: Delete failed. User not found.
+        417:
+          description: Eliminazione fallita (controllo svolto senza successo).
+          
+          
+   /infoAnimale:
+    get:
+      description: >-
+        Gets the pet's info from the database
+      summary: Sees all the info
+      responses:
+        '200':
+          description: 'Collections of pets'
+          content:
+            application/json:
+              schema:
+                type: string
+                items:
+                  $ref: '#/components/schemas/Animale'
 
    /modificaInfoAnimale:
     put:
@@ -170,6 +202,7 @@ paths:
                 codicechip:
                 caratteristicheSpecie:
                 
+<<<<<<< HEAD
    /deleteaccount:
     x-summary: Elimina account
     delete:
@@ -182,6 +215,8 @@ paths:
         417:
           description: Eliminazione fallita (controllo svolto senza successo).    
           
+=======
+>>>>>>> 9fe4da7fb181c67e76eea38f366fd71640fe79e9
    /inforazza:
     x-summary: Informazioni razza
     get:
@@ -198,7 +233,24 @@ paths:
             - infoSpecie: spiegazione della razza
               immagine: /images/esempioaniamle.jpeg
          500:
+<<<<<<< HEAD
           description: 'Delete failed. Razza not found.' 
+=======
+          description: 'Delete failed. Razza not found.'  
+          
+   /deleteanimal:
+    x-summary: Elimina animale
+    delete:
+      summary: elimina animale con tutti i suoi dati
+      responses:
+        200:
+          description: animale eliminato (controllo svolto con successo)
+        500:
+          description: Delete failed. User not found.
+        417:
+          description: Eliminazione fallita (controllo svolto senza successo).     
+          
+>>>>>>> 9fe4da7fb181c67e76eea38f366fd71640fe79e9
         
    /impegni:
      x-summary: Vede tutte le info dell'impegno
@@ -220,6 +272,7 @@ paths:
               - ora: 12:00
         500:
           description: 'User not found'
+<<<<<<< HEAD
           
    /deleteanimal:
     x-summary: Elimina animale
@@ -232,6 +285,9 @@ paths:
           description: Delete failed. User not found.
         417:
           description: Eliminazione fallita (controllo svolto senza successo).         
+=======
+           
+>>>>>>> 9fe4da7fb181c67e76eea38f366fd71640fe79e9
    
    /deletetask:
     x-summary: Elimina impegno
@@ -245,6 +301,7 @@ paths:
         417:
           description: Eliminazione fallita (controllo svolto senza successo). 
           
+<<<<<<< HEAD
    /deletefood:
     x-summary: Elimina cibo
     delete:
@@ -293,6 +350,20 @@ paths:
           examples:
             application/json:
               - email: emailUtente
+=======
+   /AggiungiImpegno:
+    post:
+      description: >-
+        Puoi aggiungere il tuo nuovo impegno inserendo le informazioni disponibili
+      summary: Crea un nuovo impegno nel database
+      responses:
+        201:
+          description: 'Data Inserted'
+          schema:
+            $ref: '#/definitions/schemas' 
+          examples:
+            application/json:
+>>>>>>> 9fe4da7fb181c67e76eea38f366fd71640fe79e9
                 impegno: impegno_impegni
                 animale: animale_impegni
                 luogo: luogo_impegni
@@ -302,12 +373,20 @@ paths:
           description: Empty inputs 
           examples:
             application/json:
+<<<<<<< HEAD
                - email: emailUtente
                  impegno: 
                  animale: 
                  luogo: 
                  data: 
                  ora:
+=======
+                 impegno: ''
+                 animale: '' 
+                 luogo: ''
+                 data: '' 
+                 ora: ''
+>>>>>>> 9fe4da7fb181c67e76eea38f366fd71640fe79e9
                  
    /ModificaImpegno:
     x-summary: Dati modificati
@@ -322,7 +401,10 @@ paths:
               $ref: '#/definitions/schemas'
           examples:
             application/json:
+<<<<<<< HEAD
               - email: emailUtente
+=======
+>>>>>>> 9fe4da7fb181c67e76eea38f366fd71640fe79e9
                 idImpegno: 6289378051a91e38f9872234
                 impegno: nuovo_impegno
                 animale: nuovo_animale
@@ -333,6 +415,7 @@ paths:
           description: Empty imputs
           examples:
             application/json:
+<<<<<<< HEAD
               - email: emailUtente
                 idImpegno: 6289378051a91e38f9872234
                 impegno:
@@ -342,6 +425,46 @@ paths:
                 ora:
         500:
           description: 'User not found'   
+=======
+                idImpegno: 6289378051a91e38f9872234
+                impegno: ''
+                animale: ''
+                luogo: ''
+                data: ''
+                ora: ''
+        500:
+          description: 'User not found'        
+          
+          
+   /deletefood:
+    x-summary: Elimina cibo
+    delete:
+      summary: elimina cibo con tutti i suoi dati
+      responses:
+        200:
+          description: cibo eliminato (controllo svolto con successo)
+        500:
+          description: Delete failed. User not found.
+        417:
+          description: Eliminazione fallita (controllo svolto senza successo).
+          
+  /TipologieCibo:
+     get:
+      summary: Vede tutte le info del cibo
+      responses:
+        200:
+          description: 'Collections of food'
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/schemas'
+          examples:
+            application/json:
+              - nomeProdotto: Cesar
+              - quantita: 15
+        500:
+          description: 'User not found'
+>>>>>>> 9fe4da7fb181c67e76eea38f366fd71640fe79e9
           
    /InfoAlimentazioneRazza:
     x-summary: Informazioni alimentazione in base alla razza
@@ -366,12 +489,15 @@ paths:
       description: >-
         Puoi aggiungere il tuo nuovo prodotto alimentare inserendo le informazioni disponibili
       summary: Crea un nuovo prodotto alimentare nel database
+<<<<<<< HEAD
       parameters:
         - name: body
           in: body 
           required: true
           schema:
             $ref: '#/definitions/schemas'
+=======
+>>>>>>> 9fe4da7fb181c67e76eea38f366fd71640fe79e9
       responses:
         201:
           description: 'Data Inserted'
@@ -380,7 +506,11 @@ paths:
           examples:
             application/json:
                 prodotto: Friskies
+<<<<<<< HEAD
                 quantita: 1500
+=======
+                quantita: 50
+>>>>>>> 9fe4da7fb181c67e76eea38f366fd71640fe79e9
         400:       
           description: Empty inputs 
           examples:
@@ -391,7 +521,11 @@ paths:
           description: 'Food already exists'
           examples:
             application/json:
+<<<<<<< HEAD
               - prodotto: uguale a prodotto gia esistente       
+=======
+              - prodotto: uguale a prodotto gia esistente     
+>>>>>>> 9fe4da7fb181c67e76eea38f366fd71640fe79e9
           
    /modificavalorecibo:
     x-summary: Dati modificate
@@ -407,7 +541,11 @@ paths:
           examples:
             application/json:
               - nomeProdotto: Royal Canin   
+<<<<<<< HEAD
               - valore: 10000
+=======
+              - valore: 65
+>>>>>>> 9fe4da7fb181c67e76eea38f366fd71640fe79e9
         500:
           description: 'User not found'
         417:
