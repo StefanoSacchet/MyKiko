@@ -7,6 +7,7 @@ const Razza = require('./app/models/razza');
 //.env file
 require('dotenv').config();
 
+
 const port = process.env.PORT || 8080;
 
 app.locals.db = mongoose.connect(process.env.DB_URL)
